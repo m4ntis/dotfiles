@@ -1,5 +1,7 @@
 #!/bin/sh
 
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
+
 bootstrap_options=("vim" "bash" "i3" "x" "termite")
 special_options=("all" "options")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
@@ -17,6 +19,8 @@ in_list() {
 }
 
 bootstrap_vim() {
+  mv ~/.vimrc{,.bak} 2>/dev/null
+  echo "source $SCRIPTPATH/vim/main.vim" > ~/.vimrc
   echo "done bootstraping vim"
 }
 
