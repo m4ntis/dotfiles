@@ -2,7 +2,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("vim" "bash" "i3" "x" "termite")
+bootstrap_options=("vim" "bash" "i3" "x" "termite" "wallpapers")
 special_options=("all" "options")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
@@ -40,6 +40,17 @@ bootstrap_termite() {
   echo "done bootstraping termite"
 }
 
+bootstrap_wallpapers() {
+  mv ~/.fehbg{,.bak} 2>/dev/null
+
+  cat > ~/.fehbg <<- EOM
+#!/bin/sh
+'feh' '--bg-scale' '$SCRIPTPATH/wallpapers/wallpaper'
+EOM
+
+  echo "done bootstraping wallpaper"
+}
+
 bootstrap_by_param() {
   case "$1" in
     "vim") bootstrap_vim;;
@@ -47,6 +58,7 @@ bootstrap_by_param() {
     "i3") bootstrap_i3;;
     "x") bootstrap_x;;
     "termite") bootstrap_termite;;
+    "wallpapers") bootstrap_wallpapers;;
   esac
 }
 
