@@ -1,5 +1,9 @@
 #!/bin/sh
 
+#TODO: make all the backup shit configurable
+#Just make the logic better, such as make the options definable in one place
+#only
+
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
 bootstrap_options=("vim" "bash" "i3" "x" "termite" "wallpapers")
@@ -29,6 +33,12 @@ bootstrap_bash() {
 }
 
 bootstrap_i3() {
+  rm -rf ~/.config/i3/bak/
+  mkdir -p ~/magicnumberi3iscooltempREMOVETHISIFYOUSEETHIS/
+  cp -r ~/.config/i3/* ~/magicnumberi3iscooltempREMOVETHISIFYOUSEETHIS/
+  mkdir -p ~/.config/i3/bak
+  cp -r ~/magicnumberi3iscooltempREMOVETHISIFYOUSEETHIS/* ~/.config/i3/bak/ && rm -rf $HOME/magicnumberi3iscooltempREMOVETHISIFYOUSEETHIS
+  cp $SCRIPTPATH/i3/* ~/.config/i3/
   echo "done bootstraping i3"
 }
 
