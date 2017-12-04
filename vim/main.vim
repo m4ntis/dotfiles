@@ -12,7 +12,7 @@ set statusline=%F
 
 " Spaces instead of tabs, <TAB> == 4 spaces
 function SetTabs()
-  let indend_size = 4
+  let indent_size = 4
   if &ft == "sh" || &ft == "vim"
     let indent_size = 2
   endif
