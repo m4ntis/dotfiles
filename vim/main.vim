@@ -45,9 +45,16 @@ nnoremap <C-l> <C-w>l
 " Add subfolders to vim's path in order to work with one instance of vim open
 " in the root of the project, and add go's src too in order to find stuff from
 " the source
-" TODO: Make the go path be conditional with a *.go file present under vim's
-" root dir
-set path+=/usr/local/go/src/**,**
+function SetPath()
+  set path=.,,**,
+  if &ft == "go"
+    set path+=/usr/local/go/src/**,
+  elseif &ft == "c" || &ft == "cpp"
+    set path+=/usr/include,
+  endif
+endfunction
+
+autocmd BufEnter * call SetPath()
 
 " Display tab-completion matches in a cool menu thingy
 set wildmenu
