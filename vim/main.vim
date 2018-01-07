@@ -11,8 +11,17 @@ filetype plugin on
 set number
 set nowrap
 
-" Make the status line display the name and stuffs
-set statusline=%F
+" VIM-GO
+" Initialize vim-go shit
+call plug#begin()
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+call plug#end()
+
+" Write the file automatically when running a command such as GoBuild or make
+set autowrite
+
+" Make all go's errors a quickfix list
+let g:go_list_type = "quickfix"
 
 
 " INDENTATION
@@ -41,6 +50,15 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+noremap <C-n> :cnext<CR>
+noremap <C-m> :cprevious<CR>
+noremap ,a :cclose<CR>
+
+
+if has("autocmd")
+  exec 'source' basedir . "vim-go.vim"
+endif
 
 
 " PATH
@@ -84,7 +102,7 @@ command! MakeTags !ctags -R .
 "              ^j - complete by tags
 
 " Snippets
-execute 'nnoremap' ',go' ":-1read " . basedir . "snippets/go/skele.go<CR>wa"
+execute 'nnoremap' ',go' ":-1read " . basedir . "snippets/go/skele.go<CR>A"
 execute 'nnoremap' ',iferr' ":-1read " . basedir . "snippets/go/iferr.go<CR>jA"
 execute 'nnoremap' ',sh' ":-1read " . basedir . "snippets/skele.sh<CR>2jA"
 execute 'nnoremap' ',py' ":-1read " . basedir . "snippets/skele.py<CR>4jA"
