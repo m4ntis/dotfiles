@@ -23,7 +23,7 @@ in_list() {
 }
 
 bootstrap_vim() {
-  echo "source $SCRIPTPATH/vim/main.vim" > vim/.vimrc
+  echo "source $SCRIPTPATH/vim/main.vim" > $SCRIPTPATH/vim/.vimrc
   cp -b $SCRIPTPATH/vim/.vimrc ~
   echo "done bootstraping vim"
 }
@@ -57,7 +57,11 @@ bootstrap_termite() {
 }
 
 bootstrap_wallpapers() {
-  cp -b wallpapers/.fehbg ~
+  cat > $SCRIPTPATH/wallpapers/.fehbg <<- EOM
+#!/bin/sh
+'feh' '--bg-scale' '$SCRIPTPATH/wallpapers/wallpaper'
+EOM
+  cp -b $SCRIPTPATH/wallpapers/.fehbg ~
   echo "done bootstraping wallpaper"
 }
 
