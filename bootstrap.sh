@@ -24,7 +24,7 @@ in_list() {
 
 bootstrap_vim() {
   echo "source $SCRIPTPATH/vim/main.vim" > vim/.vimrc
-  cp -b vim/.vimrc ~
+  cp -b $SCRIPTPATH/vim/.vimrc ~
   echo "done bootstraping vim"
 }
 
@@ -39,6 +39,7 @@ bootstrap_i3() {
 }
 
 bootstrap_x() {
+  cp -b $SCRIPTPATH/x/.xinitrc ~
   echo "done bootstraping x"
 }
 
