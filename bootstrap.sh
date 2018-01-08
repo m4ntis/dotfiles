@@ -23,25 +23,18 @@ in_list() {
 }
 
 bootstrap_vim() {
-  mv ~/.vimrc{,.bak} 2>/dev/null
-  echo "source $SCRIPTPATH/vim/main.vim" > ~/.vimrc
+  echo "source $SCRIPTPATH/vim/main.vim" > vim/.vimrc
+  cp -b vim/.vimrc ~
   echo "done bootstraping vim"
 }
 
 bootstrap_bash() {
-  mv ~/.bashrc{,.bak} 2>/dev/null
-  mv ~/.bash_profile{,.bak} 2>/dev/null
-  cp $SCRIPTPATH/bash/.bash* ~
+  cp -b $SCRIPTPATH/bash/.bash* ~
   echo "done bootstraping bash"
 }
 
 bootstrap_i3() {
-  rm -rf ~/.config/i3/bak/
-  mkdir -p ~/magicnumberi3iscooltempREMOVETHISIFYOUSEETHIS/
-  cp -r ~/.config/i3/* ~/magicnumberi3iscooltempREMOVETHISIFYOUSEETHIS/
-  mkdir -p ~/.config/i3/bak
-  cp -r ~/magicnumberi3iscooltempREMOVETHISIFYOUSEETHIS/* ~/.config/i3/bak/ && rm -rf $HOME/magicnumberi3iscooltempREMOVETHISIFYOUSEETHIS
-  cp $SCRIPTPATH/i3/* ~/.config/i3/
+  cp -b $SCRIPTPATH/i3/* ~/.config/i3/
   echo "done bootstraping i3"
 }
 
@@ -54,13 +47,7 @@ bootstrap_termite() {
 }
 
 bootstrap_wallpapers() {
-  mv ~/.fehbg{,.bak} 2>/dev/null
-
-  cat > ~/.fehbg <<- EOM
-#!/bin/sh
-'feh' '--bg-scale' '$SCRIPTPATH/wallpapers/wallpaper'
-EOM
-
+  cp -b wallpapers/.fehbg ~
   echo "done bootstraping wallpaper"
 }
 
