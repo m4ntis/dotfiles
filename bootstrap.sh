@@ -6,7 +6,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("vim" "bash" "i3" "x" "termite" "wallpapers")
+bootstrap_options=("vim" "bash" "i3" "i3blocks" "x" "termite" "wallpapers")
 special_options=("all" "options")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
@@ -34,8 +34,15 @@ bootstrap_bash() {
 }
 
 bootstrap_i3() {
+  mkdir -p ~/.config/i3
   cp -b $SCRIPTPATH/i3/* ~/.config/i3/
   echo "done bootstraping i3"
+}
+
+bootstrap_i3blocks() {
+  mkdir -p ~/.config/i3blocks
+  cp -b $SCRIPTPATH/i3blocks/* ~/.config/i3blocks/
+  echo "done bootstraping i3blocks"
 }
 
 bootstrap_x() {
@@ -57,6 +64,7 @@ bootstrap_by_param() {
     "vim") bootstrap_vim;;
     "bash") bootstrap_bash;;
     "i3") bootstrap_i3;;
+    "i3blocks") bootstrap_i3blocks;;
     "x") bootstrap_x;;
     "termite") bootstrap_termite;;
     "wallpapers") bootstrap_wallpapers;;

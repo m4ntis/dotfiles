@@ -1,0 +1,50 @@
+# i3blocks config file
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/lib/i3blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# See the script for details.
+# Network interface monitoring
+#
+# If the instance is not specified, use the interface used for default route.
+# The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+[ip]
+label=WAN
+command=curl 'ipecho.net/plain'
+interval=1800
+
+[iface]
+label=LAN
+interval=10
+
+# Date Time
+#
+[time]
+label=TIME
+color=#ffc1d6
+#command=date '+%d/%m %H:%M:%S'
+#interval=1
+command=echo "`date +'%a %d %b'` `date +'%T'`"; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
+interval=1
