@@ -51,6 +51,8 @@ bootstrap_x() {
 }
 
 bootstrap_termite() {
+  mkdir -p ~/.config/termite
+  cp -b $SCRIPTPATH/termite/* ~/.config/termite/
   echo "done bootstraping termite"
 }
 
