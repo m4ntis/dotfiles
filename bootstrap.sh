@@ -29,6 +29,9 @@ bootstrap_vim() {
 }
 
 bootstrap_bash() {
+  mv ~/.bashrc{,.bak} 2>/dev/null
+  mv ~/.bash_profile{,.bak} 2>/dev/null
+  cp $SCRIPTPATH/bash/.bash* ~
   echo "done bootstraping bash"
 }
 
