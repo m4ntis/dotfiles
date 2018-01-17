@@ -11,6 +11,17 @@ filetype plugin on
 set number
 set nowrap
 
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+command Drawer call PrjDraw()
+
+function PrjDraw()
+  let g:netrw_winsize = 25
+  :Vexplore
+  let g:netrw_altv = 1
+  let g:netrw_browse_split = 4
+endfunction
+
 " VIM-GO
 " Initialize vim-go shit
 call plug#begin()
