@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Hurmit Nerd Font Mono 13
+font = Hermit 13
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -58,40 +58,5 @@ color12 = #94bff3
 color13 = #ec93d3
 color14 = #93e0e3
 color15 = #ffffff
-#define #2e3440 #2E3440
-#define #3B4252 #3B4252
-#define #434C5E #434C5E
-#define #4C566A #4C566A
-#define #D8DEE9 #D8DEE9
-#define #E5E9F0 #E5E9F0
-#define #ECEFF4 #ECEFF4
-#define #8FBCBB #8FBCBB
-#define #88C0D0 #88C0D0
-#define #81A1C1 #81A1C1
-#define #5E81AC #5E81AC
-#define #BF616A #BF616A
-#define #D08770 #D08770
-#define #EBCB8B #EBCB8B
-#define #A3BE8C #A3BE8C
-#define #B48EAD #B48EAD
 
-foreground = #D8DEE9
-
-color0 = #3B4252
-color1 = #BF616A
-color2 = #A3BE8C
-color3 = #EBCB8B
-color4 = #81A1C1
-color5 = #B48EAD
-color6 = #88C0D0
-color7 = #E5E9F0
-color8 = #4C566A
-color9 = #BF616A
-color10 = #A3BE8C
-color11 = #EBCB8B
-color12 = #81A1C1
-color13 = #B48EAD
-color14 = #8FBCBB
-color15 = #ECEFF4
-
-# vim = ft=dosini cms=#%s
+# vim: ft=dosini cms=#%s
