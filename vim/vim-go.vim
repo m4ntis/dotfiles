@@ -11,4 +11,4 @@ function! s:build_go_files()
   endif
 endfunction
 
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+autocmd FileType go nmap ,b :<C-u>call <SID>build_go_files()<CR>
