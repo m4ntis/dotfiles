@@ -10,22 +10,27 @@ syntax enable
 filetype plugin on
 set number
 set nowrap
+set hidden
 
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
-command Drawer call PrjDraw()
-
-function PrjDraw()
-  let g:netrw_winsize = 25
-  :Vexplore
-  let g:netrw_altv = 1
-  let g:netrw_browse_split = 4
-endfunction
+if !exists(":Drawer")
+  function s:PrjDraw()
+    let g:netrw_winsize = 25
+    :Vexplore
+    let g:netrw_altv = 1
+    let g:netrw_browse_split = 4
+  endfunction
+  
+  command Drawer call <SID>PrjDraw()
+endif
 
 " VIM-GO
 " Initialize vim-go shit
 call plug#begin()
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go'
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'SirVer/ultisnips'
 call plug#end()
 
 " Write the file automatically when running a command such as GoBuild or make
@@ -33,6 +38,14 @@ set autowrite
 
 " Make all go's errors a quickfix list
 let g:go_list_type = "quickfix"
+let g:go_fmt_command = "goimports"
+
+" Lets just complete me and not add some stupid buffers yeah?
+set completeopt=menu
+
+" GO SYNTAX
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
 
 
 " INDENTATION
@@ -64,22 +77,20 @@ nnoremap <C-l> <C-w>l
 
 noremap <C-n> :cnext<CR>
 noremap <C-m> :cprevious<CR>
-noremap ,a :cclose<CR>
-
-
-if has("autocmd")
-  exec 'source' basedir . "vim-go.vim"
-endif
+noremap ,q :cclose<CR>
 
 
 " PATH
 set path=.,,**,
 
-" Change path according to filetype
+" AUTOCMD REQUIRED STUFF
 if has("autocmd")
+  " vim-go specific configuration
+  exec 'source' basedir . "vim-go.vim"
+
+  " Change path according to filetype
   exec 'source' basedir . "path.vim"
 endif
-
 
 " Display tab-completion matches in a cool menu thingy
 set wildmenu
