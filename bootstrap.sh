@@ -6,7 +6,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("vim" "bash" "i3" "i3blocks" "x" "termite" "wallpapers")
+bootstrap_options=("vim" "bash" "i3" "i3blocks" "x" "termite" "wallpapers", "gtk")
 special_options=("all" "options")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
@@ -68,6 +68,12 @@ EOM
   echo "done bootstraping wallpaper"
 }
 
+bootstrap_gtk() {
+  mkdir -p ~/.config/gtk-3.0
+  cp -b $SCRIPTPATH/gtk/gtk.css ~/.config/gtk-3.0
+  echo "done bootstraping gtk"
+}
+
 bootstrap_by_param() {
   case "$1" in
     "vim") bootstrap_vim;;
@@ -77,6 +83,7 @@ bootstrap_by_param() {
     "x") bootstrap_x;;
     "termite") bootstrap_termite;;
     "wallpapers") bootstrap_wallpapers;;
+    "gtk") bootstrap_gtk;;
   esac
 }
 
