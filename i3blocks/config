@@ -22,18 +22,50 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/lib/i3blocks/$BLOCK_NAME
-separator_block_width=15
+full_text=|
+align=center
+separator=false
+color=#999999
+separator_block_width=6
 markup=none
+
+[wifi-name]
+command=echo "$(iwgetid -r)  "
+interval=10
+color=#ffffff
+
+[wifi]
+instance=wlp8s0
+interval=10
+
+[separator]
 
 [backlight]
 command=get_backlight
 interval=once
 signal=1
+color=#ffffff
+
+[separator]
 
 [volume-pulseaudio]
 command=volume-pulseaudio -f 3 | sed -n 2p
 interval=once
 signal=1
+color=#ffffff
+
+[separator]
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+#[battery]
+#label=⚡
+#instance=1
+#interval=30
+#color=#ffffff
+#
+#[separator]
 
 # See the script for details.
 # Network interface monitoring
@@ -44,10 +76,16 @@ signal=1
 label=WAN
 command=curl 'ipecho.net/plain'
 interval=1800
+color=#ffffff
+
+[separator]
 
 [iface]
 label=LAN
 interval=10
+color=#ffffff
+
+[separator]
 
 # Date Time
 #
