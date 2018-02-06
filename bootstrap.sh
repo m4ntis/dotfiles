@@ -46,7 +46,10 @@ bootstrap_i3blocks() {
 }
 
 bootstrap_x() {
+  mkdir -p ~/.config
+  mkdir -p ~/.xdg
   cp -b $SCRIPTPATH/x/.xinitrc ~
+  cp -b $SCRIPTPATH/x/user-dirs.dirs ~/.config
   echo "done bootstraping x"
 }
 
