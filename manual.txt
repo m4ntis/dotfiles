@@ -1,0 +1,2 @@
+- Add "Defaults pwfeedback" to sudo
+- sudo export EDITOR=vim

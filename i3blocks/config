@@ -14,7 +14,7 @@
 # separator
 # separator_block_width
 # short_text
-# signal
+# signal=1
 # urgent
 
 # Global properties
@@ -24,6 +24,12 @@
 command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
+
+[volume-pulseaudio]
+command=volume-pulseaudio -f 3 | sed -n 2p
+#command=echo ".$SCRIPT_DIR/volume-pulseaudio -a"
+interval=once
+signal=1
 
 # See the script for details.
 # Network interface monitoring
