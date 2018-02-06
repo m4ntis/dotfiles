@@ -6,7 +6,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("vim" "bash" "i3" "i3blocks" "x" "termite" "wallpapers", "gtk")
+bootstrap_options=("vim" "bash" "i3" "i3blocks" "x" "termite" "wallpapers" "gtk")
 special_options=("all" "options")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
@@ -140,7 +140,6 @@ main() {
   validate_params "$@"
 
   handle_special_params "$@"
-
 
   bootstrap_by_params "$@"
 }
