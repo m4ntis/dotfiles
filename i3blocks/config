@@ -26,19 +26,8 @@ full_text=|
 align=center
 separator=false
 color=#999999
-separator_block_width=6
+separator_block_width=7
 markup=none
-
-[wifi-name]
-command=echo "$(iwgetid -r)  "
-interval=10
-color=#ffffff
-
-[wifi]
-instance=wlp8s0
-interval=10
-
-[separator]
 
 [backlight]
 command=get_backlight
@@ -49,7 +38,7 @@ color=#ffffff
 [separator]
 
 [volume-pulseaudio]
-command=volume-pulseaudio -f 3 | sed -n 2p
+command=volume-pulseaudio -f 3 | sed -n 2p; [[ -z "${BLOCK_BUTTON}" ]] || pavucontrol &
 interval=once
 signal=1
 color=#ffffff
@@ -72,11 +61,22 @@ color=#ffffff
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
-[ip]
-label=WAN
-command=curl 'ipecho.net/plain'
-interval=1800
+#[ip]
+#label=WAN
+#command=curl 'ipecho.net/plain'
+#interval=1800
+#color=#ffffff
+#
+#[separator]
+
+[wifi-name]
+command=echo "  $(iwgetid -r) "
+interval=10
 color=#ffffff
+
+[wifi]
+instance=wlp8s0
+interval=10
 
 [separator]
 
