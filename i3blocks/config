@@ -69,30 +69,31 @@ color=#ffffff
 #
 #[separator]
 
-[wifi-name]
-command=echo "  $(iwgetid -r) "; [[ -z "${BLOCK_BUTTON}" ]] || wicd-client -n &
-interval=10
-color=#ffffff
+#[wifi-name]
+#command=echo "  $(iwgetid -r) "; [[ -z "${BLOCK_BUTTON}" ]] || wicd-client -n &
+#interval=10
+#color=#ffffff
 
 [wifi]
+label= 
+#command=[[ -z "${BLOCK_BUTTON}" ]] || wicd-client -n &
 instance=wlp8s0
 interval=10
 
 [separator]
 
-[iface]
-label=LAN
-interval=10
-color=#ffffff
-
-[separator]
+#[iface]
+#label=LAN
+#interval=10
+#color=#ffffff
+#
+#[separator]
 
 # Date Time
 #
 [time]
-label=TIME
 color=#ffc1d6
 #command=date '+%d/%m %H:%M:%S'
 #interval=1
-command=echo "`date +'%a %d %b'` `date +'%T'`"; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
+command=echo "  `date +'%T'` "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
 interval=1
