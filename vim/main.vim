@@ -128,3 +128,8 @@ execute 'nnoremap' ',go' ":-1read " . basedir . "snippets/go/skele.go<CR>A"
 execute 'nnoremap' ',iferr' ":-1read " . basedir . "snippets/go/iferr.go<CR>jA"
 execute 'nnoremap' ',sh' ":-1read " . basedir . "snippets/skele.sh<CR>2jA"
 execute 'nnoremap' ',py' ":-1read " . basedir . "snippets/skele.py<CR>4jA"
+
+" Powerline
+set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
