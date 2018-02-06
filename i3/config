@@ -182,6 +182,7 @@ for_window [class="^.*"] border pixel 1
 
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 40 px
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse, move down 40 px, resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 800px;
+for_window [class="(?i)wicd-client"] floating enable, move position mouse, move down 40 px, resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 800px;
 
 # i3-gaps
 gaps inner 25

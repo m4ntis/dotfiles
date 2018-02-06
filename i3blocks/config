@@ -70,7 +70,7 @@ color=#ffffff
 #[separator]
 
 [wifi-name]
-command=echo "  $(iwgetid -r) "
+command=echo "  $(iwgetid -r) "; [[ -z "${BLOCK_BUTTON}" ]] || wicd-client -n &
 interval=10
 color=#ffffff
 
