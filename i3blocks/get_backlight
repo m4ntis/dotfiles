@@ -1,0 +1,4 @@
+#/usr/bin/env sh
+
+val=$(xbacklight -get)
+echo "  ${val%.*}%"

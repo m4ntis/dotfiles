@@ -25,9 +25,13 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[backlight]
+command=get_backlight
+interval=once
+signal=1
+
 [volume-pulseaudio]
 command=volume-pulseaudio -f 3 | sed -n 2p
-#command=echo ".$SCRIPT_DIR/volume-pulseaudio -a"
 interval=once
 signal=1
 
