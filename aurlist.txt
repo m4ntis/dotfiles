@@ -1,0 +1,7 @@
+gsimplecal-git 2.1_r1_g2dc6bba-1
+heroku-cli 6.15.13-1
+hyx 0.1.4-1
+neofetch 3.3.0-1
+otf-font-awesome-4 4.7.0-5
+terminus-font-ttf 4.46.0-1
+ttf-font-awesome-4 4.7.0-5
