@@ -78,7 +78,7 @@ color=#ffffff
 label= 
 #command=[[ -z "${BLOCK_BUTTON}" ]] || wicd-client -n &
 instance=wlp8s0
-interval=10
+interval=5
 
 [separator]
 

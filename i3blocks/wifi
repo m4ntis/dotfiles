@@ -20,10 +20,14 @@ INTERFACE="${BLOCK_INSTANCE:-wlan0}"
 
 #------------------------------------------------------------------------
 
+[[ -z "${BLOCK_BUTTON}" ]] || wicd-client -n &
+
+#------------------------------------------------------------------------
+
 # As per #36 -- It is transparent: e.g. if the machine has no battery or wireless
 # connection (think desktop), the corresponding block should not be displayed.
-[[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
-    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && exit
+[[ ! -d /sys/class/net/${INTERFACE}/wireless ]] && exit
+[[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && { echo "Disconnected"; echo "Disconnected"; echo "#FF0000"; exit; }
 
 #------------------------------------------------------------------------
 
@@ -44,5 +48,3 @@ elif [[ $QUALITY -lt 60 ]]; then
 elif [[ $QUALITY -lt 40 ]]; then
     echo "#FF0000"
 fi
-
-[[ -z "${BLOCK_BUTTON}" ]] || wicd-client -n &
