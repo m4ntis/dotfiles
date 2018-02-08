@@ -48,13 +48,10 @@ color=#ffffff
 # Battery indicator
 #
 # The battery instance defaults to 0.
-#[battery]
-#label=⚡
-#instance=1
-#interval=30
-#color=#ffffff
-#
-#[separator]
+[battery]
+interval=30
+
+[separator]
 
 # See the script for details.
 # Network interface monitoring
