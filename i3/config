@@ -76,16 +76,16 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $ws1  "1:    "
-set $ws2  "2:    "
-set $ws3  "3:  "
-set $ws4  "4:    "
-set $ws5  "5:    "
-set $ws6  "6:    "
-set $ws7  "7:    "
-set $ws8  "8:    "
-set $ws9  "9:    "
-set $ws10 "10:    "
+set $ws1 1:  
+set $ws2 2: 
+set $ws3 3: 
+set $ws4 4: 
+set $ws5 5: 
+set $ws6 6: 
+set $ws7 7: 
+set $ws8 8: 
+set $ws9 9: 
+set $ws10 10: 
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -170,8 +170,8 @@ bar {
 
     colors {
         background #09090990
-        focused_workspace #090909cc #090909cc #ffffff
-        inactive_workspace #09090990 #09090990 #ffffff
+        focused_workspace #09090990 #09090990 #4fc0e8
+        inactive_workspace #09090990 #09090990 #6599a3
     }
     # class         border  backgr. text    indicator   child_border
     # client.focused  #e2123f #e2123f #e2123f #e2123f     #e2123f
