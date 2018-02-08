@@ -11,7 +11,7 @@ if [[ $BATTERY -ge 80 ]]; then
   COLOUR="#00FF00"
   SYMB="  "
 elif [[ $BATTERY -ge 60 ]]; then
-  COLOUR="#80FF00"
+  COLOUR="#B0FF00"
   SYMB="  "
 elif [[ $BATTERY -ge 40 ]]; then
   COLOUR="#FFFF00"
