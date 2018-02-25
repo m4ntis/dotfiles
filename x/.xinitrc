@@ -44,7 +44,8 @@ xrandr --addmode Virtual1 1600x900_60.00
 compton -b &
 ~/.fehbg &
 syndaemon -i 0.5 -K -R -d
-setxkbmap -layout us,il -option grp:alt_shift_toggle,caps:escape
+#setxkbmap -layout us,il -option grp:alt_shift_toggle,caps:escape
+setxkbmap -option caps:escape
 xinput --set-prop "SynPS/2 Synaptics TouchPad" "Device Accel Constant Deceleration" 1.7
 
 exec i3 --shmlog-size=26214400
