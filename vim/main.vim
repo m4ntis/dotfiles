@@ -31,6 +31,7 @@ call plug#begin()
 Plug 'fatih/vim-go'
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'SirVer/ultisnips'
+Plug 'chriskempson/base16-vim'
 call plug#end()
 
 " Write the file automatically when running a command such as GoBuild or make

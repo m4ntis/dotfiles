@@ -8,19 +8,19 @@ BATTERY=${BATTERY%?}
 
 # color
 if [[ $BATTERY -ge 80 ]]; then
-  COLOUR="#00FF00"
+  COLOUR="#a3be8c"
   SYMB="  "
 elif [[ $BATTERY -ge 60 ]]; then
-  COLOUR="#B0FF00"
+  COLOUR="#a3be8c"
   SYMB="  "
 elif [[ $BATTERY -ge 40 ]]; then
-  COLOUR="#FFFF00"
+  COLOUR="#ebcb8b"
   SYMB="  "
 elif [[ $BATTERY -ge 20 ]]; then
-  COLOUR="#FF8000"
+  COLOUR="#ebcb8b"
   SYMB="  "
 else
-  COLOUR="#FF0000"
+  COLOUR="#bf616a"
   SYMB="  "
 fi
 

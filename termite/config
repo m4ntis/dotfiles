@@ -32,66 +32,51 @@ filter_unmatched_urls = true
 #modify_other_keys = false
 
 [colors]
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
-foreground = #dcdccc
-foreground_bold = #ffffff
-background = rgba(20, 20, 20, 0.85)
+# Base16 Ocean
+# Author: Chris Kempson (http://chriskempson.com)
 
-# if unset, will reverse foreground and background
-highlight = #2f2f2f
+foreground      = #c0c5ce
+foreground_bold = #dfe1e8
+cursor          = #dfe1e8
+background      = rgba(43, 48, 59, 0.85)
 
-# colors from color0 to color254 can be set
-color0 = #3f3f3f
-color1 = #705050
-color2 = #60b48a
-color3 = #dfaf8f
-color4 = #506070
-color5 = #dc8cc3
-color6 = #8cd0d3
-color7 = #dcdccc
-color8 = #709080
-color9 = #dca3a3
-color10 = #c3bf9f
-color11 = #f0dfaf
-color12 = #94bff3
-color13 = #ec93d3
-color14 = #93e0e3
-color15 = #ffffff
-#define #2e3440 #2E3440
-#define #3B4252 #3B4252
-#define #434C5E #434C5E
-#define #4C566A #4C566A
-#define #D8DEE9 #D8DEE9
-#define #E5E9F0 #E5E9F0
-#define #ECEFF4 #ECEFF4
-#define #8FBCBB #8FBCBB
-#define #88C0D0 #88C0D0
-#define #81A1C1 #81A1C1
-#define #5E81AC #5E81AC
-#define #BF616A #BF616A
-#define #D08770 #D08770
-#define #EBCB8B #EBCB8B
-#define #A3BE8C #A3BE8C
-#define #B48EAD #B48EAD
+# 16 color space
 
-foreground = #D8DEE9
+# Black, Gray, Silver, White
+color0  = #2b303b
+color8  = #65737e
+color7  = #c0c5ce
+color15 = #eff1f5
 
-color0 = #3B4252
-color1 = #BF616A
-color2 = #A3BE8C
-color3 = #EBCB8B
-color4 = #81A1C1
-color5 = #B48EAD
-color6 = #88C0D0
-color7 = #E5E9F0
-color8 = #4C566A
-color9 = #BF616A
-color10 = #A3BE8C
-color11 = #EBCB8B
-color12 = #81A1C1
-color13 = #B48EAD
-color14 = #8FBCBB
-color15 = #ECEFF4
+# Red
+color1  = #bf616a
+color9  = #bf616a
 
-# vim = ft=dosini cms=#%s
+# Green
+color2  = #a3be8c
+color10 = #a3be8c
+
+# Yellow
+color3  = #ebcb8b
+color11 = #ebcb8b
+
+# Blue
+color4  = #8fa1b3
+color12 = #8fa1b3
+
+# Purple
+color5  = #b48ead
+color13 = #b48ead
+
+# Teal
+color6  = #96b5b4
+color14 = #96b5b4
+
+# Extra colors
+color16 = #d08770
+color17 = #ab7967
+color18 = #343d46
+color19 = #4f5b66
+color20 = #a7adba
+color21 = #dfe1e8
+color22 = #42b263

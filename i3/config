@@ -170,8 +170,9 @@ bar {
 
     colors {
         background #09090990
-        focused_workspace #09090990 #09090990 #4fc0e8
-        inactive_workspace #09090990 #09090990 #6599a3
+        focused_workspace #09090990 #09090990 #b37eba
+        inactive_workspace #09090990 #09090990 #807282
+        #inactive_workspace #09090990 #09090990 #bba8bd
     }
     # class         border  backgr. text    indicator   child_border
     # client.focused  #e2123f #e2123f #e2123f #e2123f     #e2123f

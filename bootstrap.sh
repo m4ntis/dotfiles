@@ -6,7 +6,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("vim" "bash" "i3" "i3blocks" "x" "termite" "wallpapers" "gtk")
+bootstrap_options=("vim" "bash" "i3" "i3blocks" "x" "termite" "wallpaper" "gtk")
 special_options=("all" "options")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
@@ -59,11 +59,12 @@ bootstrap_termite() {
   echo "done bootstraping termite"
 }
 
-bootstrap_wallpapers() {
+bootstrap_wallpaper() {
   cat > $SCRIPTPATH/wallpapers/.fehbg <<- EOM
 #!/bin/sh
 'feh' '--bg-scale' '$SCRIPTPATH/wallpapers/wallpaper'
 EOM
+  chmod +x $SCRIPTPATH/wallpapers/.fehbg
   cp -b $SCRIPTPATH/wallpapers/.fehbg ~
   echo "done bootstraping wallpaper"
 }
@@ -82,7 +83,7 @@ bootstrap_by_param() {
     "i3blocks") bootstrap_i3blocks;;
     "x") bootstrap_x;;
     "termite") bootstrap_termite;;
-    "wallpapers") bootstrap_wallpapers;;
+    "wallpaper") bootstrap_wallpaper;;
     "gtk") bootstrap_gtk;;
   esac
 }

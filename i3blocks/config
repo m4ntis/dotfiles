@@ -25,7 +25,7 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 full_text=|
 align=center
 separator=false
-color=#999999
+color=#c0c5ce
 separator_block_width=7
 markup=none
 
@@ -33,7 +33,6 @@ markup=none
 command=get_backlight
 interval=once
 signal=1
-color=#ffffff
 
 [separator]
 
@@ -41,7 +40,6 @@ color=#ffffff
 command=volume-pulseaudio -f 3 | sed -n 2p; [[ -z "${BLOCK_BUTTON}" ]] || pavucontrol &
 interval=once
 signal=1
-color=#ffffff
 
 [separator]
 
@@ -89,7 +87,7 @@ interval=5
 # Date Time
 #
 [time]
-color=#ffc1d6
+color=#b48ead
 #command=date '+%d/%m %H:%M:%S'
 #interval=1
 command=echo "  `date +'%T'` "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &

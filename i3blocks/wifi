@@ -27,7 +27,7 @@ INTERFACE="${BLOCK_INSTANCE:-wlan0}"
 # As per #36 -- It is transparent: e.g. if the machine has no battery or wireless
 # connection (think desktop), the corresponding block should not be displayed.
 [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] && exit
-[[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && { echo "Disconnected"; echo "Disconnected"; echo "#FF0000"; exit; }
+[[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && { echo "Disconnected"; echo "Disconnected"; echo "#bf616a"; exit; }
 
 #------------------------------------------------------------------------
 
@@ -39,12 +39,10 @@ echo $QUALITY% # full text
 echo $QUALITY% # short text
 
 # color
-if [[ $QUALITY -ge 80 ]]; then
-    echo "#00FF00"
-elif [[ $QUALITY -lt 80 ]]; then
-    echo "#FFF600"
-elif [[ $QUALITY -lt 60 ]]; then
-    echo "#FFAE00"
-elif [[ $QUALITY -lt 40 ]]; then
-    echo "#FF0000"
+if [[ $QUALITY -ge 67 ]]; then
+    echo "#a3be8c"
+elif [[ $QUALITY -ge 33 ]]; then
+    echo "#ebcb8b"
+else
+    echo "#bf616a"
 fi
