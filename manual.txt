@@ -4,3 +4,4 @@ manual i3block
 manual synaptics
 manual user groups
 manual pulse default.pa
+gsimplecal close on unfocus
