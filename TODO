@@ -1,53 +1,44 @@
 TODO
-- GUI Login
 - Vim config - http://learnvimscriptthehardway.stevelosh.com/
-- Sexier environment as a result
 - Learn go
-  - Setting up the go environment
   - Reading all of the documentation in the website
   - FAQ
   - Effective go
-- c/c++ environment
-- c# environment
-- ReDemPtion
 - Security shits - after insertion
-- Audio
 - i3 tabs organization
 - Bash config
-- Zsh
-- Dualbooting
 - awk/sed/find
 - AD joining for NH
 - General recomendations + list of programmes
-- Do a refresh course in bash
 - IRC client
-- powerline
 - rofi
 - i3lock
 - Peek into:
-  - rust
   - haskel
-  - erlang
-- Theme:
-  - 38 default dark
-  - 41 eighties
-  - 50 ~ 53 gruvbox dark
 - Notifications (dunst)
-- Move to github.com/m4ntis
 - Blog
-- NES
+- Bare metal go
+- Bare metal rust
+- zsh vcs '*'
 
 
 PARTIAL
-- Learn bash - http://www.bash.academy/
-- Git dotfiles + boostrapper
+- powerline
+  - set up colous for new theme
+- Zsh
 - neofetch
-- i3Blocks
-  - date
-  - look into making the tabs bullets
 - ranger image preview
 - Read the go programming language specification (Constants)
+- rust
+- NES
+  - dbg
+  - ppu
+- vim-go
 
 DONE
+- Audio
+- Dualbooting
+- i3Blocks
+- Git dotfiles + boostrapper
 
 # vim: ft=sh
