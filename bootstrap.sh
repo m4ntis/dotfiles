@@ -6,7 +6,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("vim" "bash" "i3" "i3blocks" "x" "termite" "wallpaper" "gtk")
+bootstrap_options=("vim" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "gtk")
 special_options=("all" "options")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
@@ -31,6 +31,11 @@ bootstrap_vim() {
 bootstrap_bash() {
   cp -b $SCRIPTPATH/bash/.bash* ~
   echo "done bootstraping bash"
+}
+
+bootstrap_zsh() {
+  cp -b $SCRIPTPATH/zsh/.zsh* ~
+  echo "done bootstraping zsh"
 }
 
 bootstrap_i3() {
@@ -79,6 +84,7 @@ bootstrap_by_param() {
   case "$1" in
     "vim") bootstrap_vim;;
     "bash") bootstrap_bash;;
+    "zsh") bootstrap_zsh;;
     "i3") bootstrap_i3;;
     "i3blocks") bootstrap_i3blocks;;
     "x") bootstrap_x;;
