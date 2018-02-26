@@ -49,5 +49,7 @@ function zle-line-init zle-keymap-select {
   zle reset-prompt
 }
 
+alias ls='ls --color=auto --group-directories-first -h'
+
 # added by travis gem
 [ -f /home/m4ntis/.travis/travis.sh ] && source /home/m4ntis/.travis/travis.sh
