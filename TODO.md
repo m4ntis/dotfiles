@@ -1,5 +1,6 @@
-TODO
+# TODO
 - Vim config - http://learnvimscriptthehardway.stevelosh.com/
+  - Vim camel case motion
 - Learn go
   - Reading all of the documentation in the website
   - FAQ
@@ -24,10 +25,12 @@ TODO
   - reading all basic stuff from osdev
   - probably gonna include some asm... should prob allocate some time to just learn it
   - understanding things more than I know now and coming back in a week or so with better plans after some hands on
-- zsh vcs '*'
+- zsh vcs '\*'
+- move this to org file
+- zathura pdf viewer
 
 
-PARTIAL
+# PARTIAL
 - powerline
   - set up colous for new theme
 - Zsh
@@ -36,14 +39,16 @@ PARTIAL
 - Read the go programming language specification (Constants)
 - rust
 - NES
-  - dbg
   - ppu
+  - asm
+  - c like syntax for nes?
 - vim-go
 
-DONE
+# DONE
 - Audio
 - Dualbooting
 - i3Blocks
 - Git dotfiles + boostrapper
-
-# vim: ft=sh
+- NES
+  - dbg
+  - disass
