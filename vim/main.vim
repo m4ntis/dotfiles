@@ -8,9 +8,13 @@ set nocompatible
 " Basic styling options
 syntax enable
 filetype plugin on
-set number
 set nowrap
 set hidden
+set number
+set relativenumber
+
+au InsertEnter * set norelativenumber
+au InsertLeave * set relativenumber
 
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
@@ -25,13 +29,15 @@ if !exists(":Drawer")
   command Drawer call <SID>PrjDraw()
 endif
 
-" VIM-GO
-" Initialize vim-go shit
+set pyxversion=3
 call plug#begin()
 Plug 'fatih/vim-go'
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'SirVer/ultisnips'
 Plug 'chriskempson/base16-vim'
+Plug 'powerline/powerline'
+Plug 'stevearc/vim-arduino'
+Plug 'cespare/vim-toml'
 call plug#end()
 
 " Write the file automatically when running a command such as GoBuild or make
@@ -42,7 +48,18 @@ let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
 
 " Lets just complete me and not add some stupid buffers yeah?
-set completeopt=menu
+set completeopt=menuone
+
+" Change the behavior of the <Enter> key when the popup menu is visible. In that
+" case the Enter key will simply select the highlighted menu item, just as <C-Y>
+" does.
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " GO SYNTAX
 let g:go_highlight_methods = 1
@@ -60,6 +77,7 @@ endif
 
 
 " SEARCHING
+set ignorecase
 set smartcase
 set hlsearch
 set incsearch
@@ -133,6 +151,6 @@ execute 'nnoremap' ',sh' ":-1read " . basedir . "snippets/skele.sh<CR>2jA"
 execute 'nnoremap' ',py' ":-1read " . basedir . "snippets/skele.py<CR>4jA"
 
 " Powerline
-set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim/
+set rtp+=/home/m4ntis/.vim/plugged/powerline/powerline/bindings/vim
 set laststatus=2
 set t_Co=256
