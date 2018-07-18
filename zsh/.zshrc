@@ -51,5 +51,11 @@ function zle-line-init zle-keymap-select {
 
 alias ls='ls --color=auto --group-directories-first -h'
 
+# Command caching
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+
 # added by travis gem
 [ -f /home/m4ntis/.travis/travis.sh ] && source /home/m4ntis/.travis/travis.sh
