@@ -38,6 +38,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'powerline/powerline'
 Plug 'stevearc/vim-arduino'
 Plug 'cespare/vim-toml'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " Write the file automatically when running a command such as GoBuild or make
