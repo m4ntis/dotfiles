@@ -87,7 +87,6 @@ interval=5
 # Date Time
 #
 [time]
-color=#b48ead
 #command=date '+%d/%m %H:%M:%S'
 #interval=1
 command=echo "  `date +'%T'` "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &

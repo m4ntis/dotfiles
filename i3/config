@@ -170,8 +170,8 @@ bar {
 
     colors {
         background #09090990
-        focused_workspace #09090990 #09090990 #b48ead
-        inactive_workspace #09090990 #09090990 #7b717c
+        focused_workspace #09090990 #09090990 #8ee38e
+        inactive_workspace #09090990 #09090990 #576d57
         #inactive_workspace #09090990 #09090990 #bba8bd
     }
     # class         border  backgr. text    indicator   child_border

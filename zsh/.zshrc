@@ -38,7 +38,7 @@ precmd() {
 }
 
 setopt prompt_subst
-PROMPT='%F{blue}[%F{magenta}%n%f@%F{cyan}%m%F{green}${vcs_info_msg_0_}%f %1~%F{blue}]%f '
+PROMPT='[%F{green}%n%f@%m%F{green}${vcs_info_msg_0_}%f %1~]%f '
 
 # Display zle normal mode thingy on the wight
 zle -N zle-line-init
