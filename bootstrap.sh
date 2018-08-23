@@ -8,7 +8,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("vim" "polybar" "fonts" "compoton" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "gtk")
+bootstrap_options=("nvim" "vim" "polybar" "fonts" "compoton" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "gtk")
 special_options=("all" "usage")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
@@ -22,6 +22,15 @@ in_list() {
     fi
   done
   return 1
+}
+
+bootstrap_nvim() {
+  mkdir -p $HOME/.config/nvim
+  ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  echo "done bootstraping nvim"
+
+  bootstrap_vim
 }
 
 bootstrap_vim() {
@@ -110,6 +119,7 @@ bootstrap_gtk() {
 
 bootstrap_by_param() {
   case "$1" in
+    "nvim") bootstrap_nvim;;
     "vim") bootstrap_vim;;
     "polybar") bootstrap_polybar;;
     "fonts") bootstrap_fonts;;
@@ -183,4 +193,3 @@ main() {
 }
 
 main $@
-
