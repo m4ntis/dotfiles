@@ -7,7 +7,7 @@
 
 # i3 config file (v4)
 #
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!   a 
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
 set $mod Mod1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -146,26 +146,28 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && pkill -RTMIN+1 i3blocks
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    font pango: xos4 Terminus 12
-    strip_workspace_numbers yes
+#bar {
+#    font pango: xos4 Terminus 12
+#    strip_workspace_numbers yes
+#
+#    # Enable transparency
+#    i3bar_command i3bar -t
+#    status_command i3blocks
+#
+#    position top
+#    height 40
+#
+#    colors {
+#        background #09090990
+#        focused_workspace #09090990 #09090990 #8ee38e
+#        inactive_workspace #09090990 #09090990 #576d57
+#        #inactive_workspace #09090990 #09090990 #bba8bd
+#    }
+#    # class         border  backgr. text    indicator   child_border
+#    # client.focused  #e2123f #e2123f #e2123f #e2123f     #e2123f
+#}
 
-    # Enable transparency
-    i3bar_command i3bar -t
-    status_command i3blocks
-
-    position top
-    height 40
-
-    colors {
-        background #09090990
-        focused_workspace #09090990 #09090990 #8ee38e
-        inactive_workspace #09090990 #09090990 #576d57
-        #inactive_workspace #09090990 #09090990 #bba8bd
-    }
-    # class         border  backgr. text    indicator   child_border
-    # client.focused  #e2123f #e2123f #e2123f #e2123f     #e2123f
-}
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Leave only a small border of pixels
 for_window [class="^.*"] border pixel 1
@@ -177,4 +179,4 @@ for_window [class="BoNES"] floating enable, move left 417 px, move down 10 px
 
 # i3-gaps
 gaps inner 25
-gaps outer 16
+gaps outer 0

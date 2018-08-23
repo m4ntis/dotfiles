@@ -25,21 +25,33 @@ if !exists(":Drawer")
     let g:netrw_altv = 1
     let g:netrw_browse_split = 4
   endfunction
-  
+
   command Drawer call <SID>PrjDraw()
 endif
 
-set pyxversion=3
+autocmd InsertEnter *.{c,cpp,cs,rs,go} call deoplete#enable()
+
 call plug#begin()
-Plug 'fatih/vim-go'
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'SirVer/ultisnips'
-Plug 'chriskempson/base16-vim'
-Plug 'powerline/powerline'
-Plug 'stevearc/vim-arduino'
-Plug 'cespare/vim-toml'
-Plug 'tpope/vim-surround'
+  Plug 'SirVer/ultisnips'
+  Plug 'chriskempson/base16-vim'
+  Plug 'powerline/powerline'
+  Plug 'stevearc/vim-arduino'
+  Plug 'cespare/vim-toml'
+  Plug 'tpope/vim-surround'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'prettier/vim-prettier'
+  Plug 'Shougo/deoplete.nvim'
+
+  if executable('go')
+    Plug 'zchee/deoplete-go'
+    Plug 'fatih/vim-go'
+    Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.config/nvim/plugged/gocode/vim/symlink.sh' }
+  endif
 call plug#end()
+
+let g:airline_theme='angr'
+colo ron
 
 " Write the file automatically when running a command such as GoBuild or make
 set autowrite
@@ -150,8 +162,3 @@ execute 'nnoremap' ',go' ":-1read " . basedir . "snippets/go/skele.go<CR>A"
 execute 'nnoremap' ',iferr' ":-1read " . basedir . "snippets/go/iferr.go<CR>jA"
 execute 'nnoremap' ',sh' ":-1read " . basedir . "snippets/skele.sh<CR>2jA"
 execute 'nnoremap' ',py' ":-1read " . basedir . "snippets/skele.py<CR>4jA"
-
-" Powerline
-set rtp+=/home/m4ntis/.vim/plugged/powerline/powerline/bindings/vim
-set laststatus=2
-set t_Co=256

@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Hurmit Nerd Font Mono 13
+font = lemon 15
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -38,7 +38,7 @@ filter_unmatched_urls = true
 foreground      = #c0c5ce
 foreground_bold = #dfe1e8
 cursor          = #dfe1e8
-background      = rgba(48, 48, 48, 0.80)
+background      = rgba(48, 48, 48, 0.9)
 
 # 16 color space
 

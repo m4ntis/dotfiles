@@ -32,20 +32,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# VM graphics drivers are real poop
-xrandr --newmode "1920x1080_60.00"  173.00 1920 2048 2248 2567  1080 1083 1088 1120 -hsync +vsync
-xrandr --addmode Virtual1 1920x1080_60.00
-xrandr --output Virtual1 --mode 1920x1080_60.00
-
-# For testing an approximately 13" screen
-xrandr --newmode "1600x900_60.00" 118.25 1600 1696 1856 2012 900 903 908 934 -hsync +vsync
-xrandr --addmode Virtual1 1600x900_60.00
-
 compton -b &
 ~/.fehbg &
 syndaemon -i 0.5 -K -R -d
-#setxkbmap -layout us,il -option grp:alt_shift_toggle,caps:escape
+setxkbmap -layout us,il -option grp:alt_space_toggle,caps:escape
 setxkbmap -option caps:escape
 xinput --set-prop "SynPS/2 Synaptics TouchPad" "Device Accel Constant Deceleration" 1.7
 
-exec i3 --shmlog-size=26214400
+exec i3

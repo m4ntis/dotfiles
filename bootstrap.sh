@@ -1,13 +1,15 @@
 #!/bin/sh
 
-#TODO: make all the backup shit configurable
-#Just make the logic better, such as make the options definable in one place
-#only
+# TODO:
+# - Make all the backup shit configurable
+# - Just improve logic and design, such as make the options definable in one
+#   place only.
+# - Define a signle function to deal with all xdg_config_dir type of configs
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("vim" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "gtk")
-special_options=("all" "options")
+bootstrap_options=("vim" "polybar" "fonts" "compoton" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "gtk")
+special_options=("all" "usage")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
 
@@ -26,6 +28,32 @@ bootstrap_vim() {
   echo "source $SCRIPTPATH/vim/main.vim" > $SCRIPTPATH/vim/.vimrc
   cp -b $SCRIPTPATH/vim/.vimrc ~
   echo "done bootstraping vim"
+}
+
+bootstrap_polybar() {
+  mkdir -p ~/.config/polybar
+  cp -b $SCRIPTPATH/polybar/* ~/.config/polybar/
+  echo "done bootstraping polybar"
+}
+
+bootstrap_fonts() {
+  if [[ $EUID -ne 0 ]]; then
+    echo "Bootstraping fonts requires running as root"
+    return
+  fi
+
+  cp -b $SCRIPTPATH/fonts/TTF/* /usr/share/fonts/TTF/
+  echo "done bootstraping fonts"
+}
+
+bootstrap_compton() {
+  if [[ $EUID -ne 0 ]]; then
+    echo "Bootstraping compton requires running as root"
+    return
+  fi
+
+  cp -b $SCRIPTPATH/compton/compton.conf /etc/xdg/
+  echo "done bootstraping compoton"
 }
 
 bootstrap_bash() {
@@ -83,6 +111,9 @@ bootstrap_gtk() {
 bootstrap_by_param() {
   case "$1" in
     "vim") bootstrap_vim;;
+    "polybar") bootstrap_polybar;;
+    "fonts") bootstrap_fonts;;
+    "compoton") bootstrap_compton;;
     "bash") bootstrap_bash;;
     "zsh") bootstrap_zsh;;
     "i3") bootstrap_i3;;
@@ -101,7 +132,7 @@ bootstrap_by_params() {
 }
 
 print_usage() {
-  ( IFS='|'; echo "usage: ./bootstrap.sh all | ./bootstrap.sh options | ./bootstrap.sh ${bootstrap_options[*]}" )
+  ( IFS='|'; echo "usage: ./bootstrap.sh all | ./bootstrap.sh usage | ./bootstrap.sh ${bootstrap_options[*]}" )
 }
 
 exit_invalid_usage() {
@@ -137,7 +168,7 @@ handle_special_params() {
     "all")
       bootstrap_by_params "${bootstrap_options[@]}"
       exit 0;;
-    "options")
+    "usage")
       print_usage
       exit 0;;
   esac
