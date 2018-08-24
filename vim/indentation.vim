@@ -3,6 +3,7 @@ autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType zsh setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType conf setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType toml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType md setlocal ts=2 sts=2 sw=2 expandtab
 
