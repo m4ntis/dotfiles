@@ -20,7 +20,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 5 -opacity 85 -font "Hurmit Nerd Font Mono 13"
+bindsym $mod+d exec rofi -show run -lines 5 -opacity 85 -font "lemon 15"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -137,12 +137,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # change volume or toggle mute
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%-
 
 # Brightness control
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && pkill -RTMIN+1 i3blocks
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && pkill -RTMIN+1 i3blocks
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
