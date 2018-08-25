@@ -40,7 +40,7 @@ precmd() {
 setopt prompt_subst
 PROMPT='[%F{green}%n%f@%m%F{green}${vcs_info_msg_0_}%f %1~]%f '
 
-# Display zle normal mode thingy on the wight
+# Display zle normal mode thingy on the right
 zle -N zle-line-init
 zle -N zle-keymap-select
 function zle-line-init zle-keymap-select {
