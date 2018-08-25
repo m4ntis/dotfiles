@@ -7,7 +7,7 @@
 
 # Add colours to ls
 alias ls='ls --color=auto --group-directories-first -h'
-alias la='ls -A'
+alias vim='nvim'
 
 # Add advanced globbing options:
 # +(x[ | x ... ]) Matches when any x appears once or above
@@ -48,7 +48,7 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[34m\][\[\e[31m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\] \[\e[32m\]\`parse_git_branch\`\[\e[m\]\W\[\e[34m\]]\[\e[m\] "
+export PS1="\[\e[34m\][\[\e[32m\]\u\[\e[m\]@\[\e[m\]\h\[\e[m\] \[\e[32m\]\`parse_git_branch\`\[\e[m\]\W\[\e[34m\]]\[\e[m\] "
 
 #powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1

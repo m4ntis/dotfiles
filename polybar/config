@@ -61,8 +61,8 @@ module-margin-right = 1
 font-0 = lemon:size=15;1
 
 modules-left = i3
-;modules-center =
-modules-right = xbacklight alsa xkeyboard wlan battery temperature date
+modules-center =
+modules-right = xbacklight pulseaudio xkeyboard wlan battery temperature date
 
 ;tray-position = right
 ;tray-padding = 2
@@ -70,7 +70,7 @@ modules-right = xbacklight alsa xkeyboard wlan battery temperature date
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 override-redirect = true
 
@@ -200,7 +200,7 @@ bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.primary}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -231,17 +231,17 @@ type = internal/network
 interface = wlp8s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+;format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected>
+format-connected-underline = ${colors.primary}
 label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${colors.secondary}
+label-disconnected = no wifi
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
+ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
@@ -282,20 +282,20 @@ label = %time%%date%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
 label-muted = muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors.primary}
+bar-volume-foreground-1 = ${colors.primary}
+bar-volume-foreground-2 = ${colors.primary}
+bar-volume-foreground-3 = ${colors.primary}
+bar-volume-foreground-4 = ${colors.primary}
+bar-volume-foreground-5 = ${colors.secondary}
+bar-volume-foreground-6 = ${colors.secondary}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2

@@ -8,7 +8,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("nvim" "vim" "polybar" "fonts" "compoton" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "gtk")
+bootstrap_options=("nvim" "vim" "polybar" "fonts" "compoton" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "mpd" "gtk")
 special_options=("all" "usage")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
@@ -111,6 +111,12 @@ EOM
   echo "done bootstraping wallpaper"
 }
 
+bootstrap_mpd() {
+  mkdir -p ~/.config/mpd
+  cp -b $SCRIPTPATH/mpd/mpd.conf ~/.config/mpd/
+  echo "done bootstraping mpd"
+}
+
 bootstrap_gtk() {
   mkdir -p ~/.config/gtk-3.0
   cp -b $SCRIPTPATH/gtk/gtk.css ~/.config/gtk-3.0
@@ -131,6 +137,7 @@ bootstrap_by_param() {
     "x") bootstrap_x;;
     "termite") bootstrap_termite;;
     "wallpaper") bootstrap_wallpaper;;
+    "mpd") bootstrap_mpd;;
     "gtk") bootstrap_gtk;;
   esac
 }
