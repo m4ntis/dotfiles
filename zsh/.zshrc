@@ -22,7 +22,7 @@ export KEYTIMEOUT=1
 
 parse_git_dirty() {
   builtin cd -q /home/m4ntis/dotfiles
-  test -z "$(git status --porcelain --ignore-submodules -unormal 2> /dev/null)" 
+  test -z "$(git status --porcelain --ignore-submodules -unormal 2> /dev/null)"
   #TODO: Make this insanity fucking work
   #(( $? )) && echo " *"
   zle reset-prompt 2> /dev/null
@@ -50,6 +50,7 @@ function zle-line-init zle-keymap-select {
 }
 
 alias ls='ls --color=auto --group-directories-first -h'
+alias vim='nvim'
 
 # Command caching
 zstyle ':completion:*' accept-exact '*(N)'
