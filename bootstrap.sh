@@ -71,7 +71,7 @@ bootstrap_bash() {
 }
 
 bootstrap_zsh() {
-  cp -b $SCRIPTPATH/zsh/.zsh* ~
+  cp -b $SCRIPTPATH/zsh/.z* ~
   echo "done bootstraping zsh"
 }
 
