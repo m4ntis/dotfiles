@@ -192,7 +192,7 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = ⯇
 
 bar-width = 10
 bar-indicator = |
@@ -231,22 +231,13 @@ type = internal/network
 interface = wlp8s0
 interval = 3.0
 
-;format-connected = <ramp-signal> <label-connected>
-format-connected = <label-connected>
+format-connected = ⮷ <label-connected>
 format-connected-underline = ${colors.primary}
 label-connected = %essid%
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.secondary}
 label-disconnected = no wifi
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
@@ -282,7 +273,7 @@ label = %time%%date%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = ⮟
 label-volume-foreground = ${root.foreground}
 
 label-muted = muted
@@ -339,10 +330,10 @@ battery = BAT1
 adapter = ACAD
 full-at = 98
 
-format-charging = <label-charging>
+format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${colors.primary}
 
-format-discharging = <label-discharging>
+format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${colors.secondary}
 
 format-full-prefix = " "
@@ -351,11 +342,17 @@ format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-foreground = ${colors.primary}
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+animation-charging-0 = ⮐
+animation-charging-1 = ⮑
+animation-charging-2 = ⮏
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 500
+
+animation-discharging-0 = ⮏
+animation-discharging-1 = ⮑
+animation-discharging-2 = ⮐
+animation-discharging-foreground = ${colors.foreground}
+animation-discharging-framerate = 500
 
 [module/temperature]
 type = internal/temperature
