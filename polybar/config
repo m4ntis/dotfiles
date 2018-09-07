@@ -273,7 +273,7 @@ label = %time%%date%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = ⮟
+label-volume = ⮟ %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = muted
@@ -352,7 +352,7 @@ animation-discharging-0 = ⮏
 animation-discharging-1 = ⮑
 animation-discharging-2 = ⮐
 animation-discharging-foreground = ${colors.foreground}
-animation-discharging-framerate = 500
+animation-discharging-framerate = 1000
 
 [module/temperature]
 type = internal/temperature
