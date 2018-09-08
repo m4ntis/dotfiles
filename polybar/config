@@ -336,8 +336,8 @@ format-charging-underline = ${colors.primary}
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${colors.secondary}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix = "⮏ "
+format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-foreground = ${colors.primary}
