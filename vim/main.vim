@@ -78,7 +78,6 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 let g:go_highlight_methods = 1
 let g:go_highlight_functions = 1
 
-
 " INDENTATION
 set ts=4 sts=4 sw=4 expandtab
 set autoindent
@@ -88,6 +87,9 @@ if has("autocmd")
   exec 'source' basedir . "indentation.vim"
 endif
 
+" Hightlight long lines
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 " SEARCHING
 set ignorecase
