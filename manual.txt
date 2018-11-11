@@ -1,4 +1,3 @@
 Add "Defaults pwfeedback" to sudo
 sudo export EDITOR=vim
 manual synaptics
-manual pulse default.pa
