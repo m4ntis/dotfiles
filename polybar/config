@@ -228,7 +228,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp8s0
+interface = wlp2s0
 interval = 3.0
 
 format-connected = ⮷ <label-connected>
@@ -326,7 +326,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT1
+battery = BAT0
 adapter = ACAD
 full-at = 98
 
