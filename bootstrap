@@ -8,7 +8,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("nvim" "vim" "polybar" "fonts" "compoton" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "mpd" "gtk")
+bootstrap_options=("nvim" "vim" "polybar" "fonts" "compton" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "mpd" "gtk")
 special_options=("all" "usage")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
@@ -62,7 +62,7 @@ bootstrap_compton() {
   fi
 
   cp -b $SCRIPTPATH/compton/compton.conf /etc/xdg/
-  echo "done bootstraping compoton"
+  echo "done bootstraping compton"
 }
 
 bootstrap_bash() {
@@ -129,7 +129,7 @@ bootstrap_by_param() {
     "vim") bootstrap_vim;;
     "polybar") bootstrap_polybar;;
     "fonts") bootstrap_fonts;;
-    "compoton") bootstrap_compton;;
+    "compton") bootstrap_compton;;
     "bash") bootstrap_bash;;
     "zsh") bootstrap_zsh;;
     "i3") bootstrap_i3;;
