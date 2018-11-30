@@ -42,6 +42,8 @@ call plug#begin()
   Plug 'vim-airline/vim-airline-themes'
   Plug 'prettier/vim-prettier'
   Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/neoinclude.vim'
+  Plug 'zchee/deoplete-clang'
 
   if executable('go')
     Plug 'zchee/deoplete-go'
