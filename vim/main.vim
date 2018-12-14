@@ -50,6 +50,11 @@ call plug#begin()
     Plug 'fatih/vim-go'
     Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.config/nvim/plugged/gocode/vim/symlink.sh' }
   endif
+
+  if executable('cargo')
+    Plug 'rust-lang/rust.vim'
+    Plug 'sebastianmarkow/deoplete-rust'
+  endif
 call plug#end()
 
 let g:airline_theme='angr'
@@ -61,6 +66,10 @@ set autowrite
 " Make all go's errors a quickfix list
 let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
+
+let g:rustfmt_autosave = 1
+let g:deoplete#sources#rust#racer_binary='/usr/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='/lib/rustlib/src/rust/src'
 
 " Lets just complete me and not add some stupid buffers yeah?
 set completeopt=menuone
