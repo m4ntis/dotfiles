@@ -55,3 +55,28 @@ alias vim='nvim'
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+
+DISPLAY=true
+if [ -f $HOME/.shush ]; then
+  typeset -i SHUSH=$(cat $HOME/.shush)
+  typeset -i NOW=$(date +%s)
+  if [ "$SHUSH" -gt "$NOW" ]; then
+    DISPLAY=false
+  fi
+fi
+
+if [ $DISPLAY = true ]; then
+  if [ -f $HOME/.todo ]; then
+    echo "PICK A THING TO TAKE OFF THE LIST. BE PRODUCTIVE."
+    echo ""
+    echo "Run 'cookie' when a task is executed."
+    echo "Run 'todo <task>' to add to the list."
+    echo ""
+    cat $HOME/.todo
+  fi
+
+  if [ -f $HOME/.cookies ]; then
+    echo ""
+    echo "You currently have $(cat $HOME/.cookies) cookies."
+  fi
+fi
