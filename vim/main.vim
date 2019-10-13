@@ -69,7 +69,7 @@ let g:go_fmt_command = "goimports"
 
 let g:rustfmt_autosave = 1
 let g:deoplete#sources#rust#racer_binary='/usr/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='/lib/rustlib/src/rust/src'
+let g:deoplete#sources#rust#rust_source_path='/home/m4ntis/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 
 " Lets just complete me and not add some stupid buffers yeah?
 set completeopt=menuone
@@ -126,6 +126,7 @@ noremap ,q :cclose<CR>
 
 
 " PATH
+set wildignore=*/vendor/*
 set path=.,,**,
 " `gf` opens file under cursor in a new vertical split
 nnoremap gf :vertical wincmd f<CR>
