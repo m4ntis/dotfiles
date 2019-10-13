@@ -10,6 +10,7 @@ clickable_url = true
 font = lemon 15
 scrollback_lines = 10000
 search_wrap = true
+cell_height_scale = 1.25
 #icon_name = terminal
 #geometry = 640x480
 
@@ -38,7 +39,7 @@ filter_unmatched_urls = true
 foreground      = #c0c5ce
 foreground_bold = #dfe1e8
 cursor          = #dfe1e8
-background      = rgba(48, 48, 48, 0.9)
+background      = rgba(48, 48, 48, 0.8)
 
 # 16 color space
 
@@ -80,3 +81,5 @@ color19 = #4f5b66
 color20 = #a7adba
 color21 = #dfe1e8
 color22 = #42b263
+
+# vim: ft=dosini
