@@ -17,12 +17,13 @@
 ;==========================================================
 
 [colors]
-background = #E6303030
-background-alt = #E6404040
+background = #CD303030
+background-alt = #CD404040
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #afe3af
-secondary = #ed8c95
+primary = #e3d0c9
+secondary = #db7f95
+#secondary = #e491a3
 alert = #bd2c40
 
 [bar/dummy]
