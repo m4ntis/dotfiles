@@ -108,7 +108,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # class         border  backgr. text    indicator   child_border
-client.focused  #a3be8c $a3be8c #a3be8c #a3be8c     #a3be8c
+#client.focused  #db7f95 $db7f95 #db7f95 #db7f95     #db7f95
+client.focused  #e77893 $e77893 #e77893 #e77893     #e77893
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -145,6 +146,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always $HOME/.config/i3/gnome-keyring.sh
 
 # Leave only a small border of pixels
 for_window [class="^.*"] border pixel 1
