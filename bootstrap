@@ -8,7 +8,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("nvim" "vim" "polybar" "fonts" "compton" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "mpd" "gtk")
+bootstrap_options=("nvim" "vim" "polybar" "fonts" "compton" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "rofi" "mpd" "gtk")
 special_options=("all" "usage")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
@@ -111,6 +111,12 @@ EOM
   echo "done bootstraping wallpaper"
 }
 
+bootstrap_rofi() {
+  mkdir -p ~/.config/rofi
+  cp -b $SCRIPTPATH/rofi/config ~/.config/rofi/
+  echo "done bootstraping rofi"
+}
+
 bootstrap_mpd() {
   mkdir -p ~/.config/mpd
   cp -b $SCRIPTPATH/mpd/mpd.conf ~/.config/mpd/
@@ -137,6 +143,7 @@ bootstrap_by_param() {
     "x") bootstrap_x;;
     "termite") bootstrap_termite;;
     "wallpaper") bootstrap_wallpaper;;
+    "rofi") bootstrap_rofi;;
     "mpd") bootstrap_mpd;;
     "gtk") bootstrap_gtk;;
   esac
