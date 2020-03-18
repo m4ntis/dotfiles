@@ -8,7 +8,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd )"
 
-bootstrap_options=("nvim" "vim" "polybar" "fonts" "compton" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "rofi" "mpd" "gtk")
+bootstrap_options=("nvim" "vim" "polybar" "fonts" "picom" "bash" "zsh" "i3" "i3blocks" "x" "termite" "wallpaper" "rofi" "mpd" "gtk")
 special_options=("all" "usage")
 options=("${special_options[@]}" "${bootstrap_options[@]}")
 initial_params="$@"
@@ -55,14 +55,14 @@ bootstrap_fonts() {
   echo "done bootstraping fonts"
 }
 
-bootstrap_compton() {
+bootstrap_picom() {
   if [[ $EUID -ne 0 ]]; then
-    echo "Bootstraping compton requires running as root"
+    echo "Bootstraping picom requires running as root"
     return
   fi
 
-  cp -b $SCRIPTPATH/compton/compton.conf /etc/xdg/
-  echo "done bootstraping compton"
+  cp -b $SCRIPTPATH/picom/picom.conf /etc/xdg/
+  echo "done bootstraping picom"
 }
 
 bootstrap_bash() {
@@ -135,7 +135,7 @@ bootstrap_by_param() {
     "vim") bootstrap_vim;;
     "polybar") bootstrap_polybar;;
     "fonts") bootstrap_fonts;;
-    "compton") bootstrap_compton;;
+    "picom") bootstrap_picom;;
     "bash") bootstrap_bash;;
     "zsh") bootstrap_zsh;;
     "i3") bootstrap_i3;;
