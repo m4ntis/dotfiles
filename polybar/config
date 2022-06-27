@@ -38,7 +38,7 @@ modules-left = blank
 
 [bar/main]
 monitor = ${env:MONITOR:eDP1}
-width = 1870
+width = ${env:BARWIDTH:1870}
 height = 28
 offset-x = 25
 offset-y = 14
@@ -145,7 +145,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
