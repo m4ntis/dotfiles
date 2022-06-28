@@ -32,8 +32,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-compton -b &
-~/.fehbg &
+picom -b &
 syndaemon -i 0.5 -K -R -d
 setxkbmap -layout us,il -option grp:alt_space_toggle,caps:escape
 setxkbmap -option caps:escape

@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/m4ntis/dotfiles/wallpapers/wallpaper2' 
