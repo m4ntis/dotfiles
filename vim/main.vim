@@ -59,7 +59,7 @@ call plug#begin()
 call plug#end()
 
 let g:airline_theme='angr'
-colo ron
+hi LineNr guibg=NONE ctermbg=NONE ctermfg=DarkGreen
 
 " Write the file automatically when running a command such as GoBuild or make
 set autowrite
