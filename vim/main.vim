@@ -44,6 +44,7 @@ call plug#begin()
   Plug 'Shougo/deoplete.nvim'
   Plug 'Shougo/neoinclude.vim'
   Plug 'zchee/deoplete-clang'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
   if executable('go')
     Plug 'zchee/deoplete-go'
